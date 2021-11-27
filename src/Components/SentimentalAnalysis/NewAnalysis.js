@@ -72,10 +72,11 @@ const NewAnalysis = () => {
                         <label for="exampleInputConfirmPassword1">Date</label>
                         <input
                           type="date"
+                          max={new Date().toISOString().slice(0, 10)}
                           value={date}
                           onChange={(e) => {
                             setDate(e.target.value);
-                            alert(e.target.value);
+                            // alert(e.target.value);
                           }}
                           class="form-control"
                           id="exampleInputConfirmPassword1"

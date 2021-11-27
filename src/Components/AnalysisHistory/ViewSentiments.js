@@ -84,7 +84,7 @@ const ViewSentiments = () => {
                               return (
                                 <tr>
                                   <td>{i + 1}</td>
-                                  <td>2012/08/03</td>
+                                  <td>{tweet.date.slice(0, 10)}</td>
                                   <td>{tweet.keyWords}</td>
                                   <td>{tweet.tweet.length}</td>
                                   <td>

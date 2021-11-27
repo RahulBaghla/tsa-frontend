@@ -88,14 +88,15 @@ const Login = () => {
                     </a>
                   </div> */}
                   <div class="my-3">
-                    <a
+                    <button
                       class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.preventDefault();
                         loginUser({ email, password });
                       }}
                     >
                       LOGIN
-                    </a>
+                    </button>
                   </div>
                   <div class="text-center mt-4 font-weight-light">
                     Don't have an account?{" "}

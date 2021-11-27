@@ -10,7 +10,13 @@ const Register = () => {
   const registerUser = async (formData) => {
     try {
       const res = await axios.post(API + "/api/user", formData);
-      console.log(res.data);
+      // console.log(res.data);
+      if (res.data.msg == "User Created Successfully!") {
+        alert(res.data.msg);
+        window.location.href = "/";
+      } else {
+        alert(res.data.msg);
+      }
     } catch (error) {
       console.log(error.message);
     }
@@ -101,14 +107,15 @@ const Register = () => {
                     </div>
                   </div> */}
                   <div class="mt-3">
-                    <a
+                    <button
                       class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.preventDefault();
                         registerUser({ name, email, password });
                       }}
                     >
                       SIGN UP
-                    </a>
+                    </button>
                   </div>
                   <div class="text-center mt-4 font-weight-light">
                     Already have an account?{" "}
